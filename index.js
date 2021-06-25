@@ -1,10 +1,9 @@
 const express = require("express")
 const cors = require("cors")
 const app = express()
-
-
+const port = process.env.PORT || 5000;
+require('dotenv').config()
 const { MongoClient, ObjectId } = require('mongodb');
-const { restart } = require("nodemon");
 const uri = "mongodb+srv://craft400:craft24023@cluster0.wjywa.mongodb.net/craft-service?retryWrites=true&w=majority";
 const client = new MongoClient(uri, { useNewUrlParser: true, useUnifiedTopology: true });
 // Midlware
@@ -82,6 +81,6 @@ console.log(err);
  
 });
 
-app.listen(5000)
+app.listen(port)
 
 
