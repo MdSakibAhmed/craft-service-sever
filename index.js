@@ -76,7 +76,7 @@ app.get("/getBookSeat/:id", (req,res) =>  {
     })
 })
 
-app.delete("delete/:id",(req,res) => {
+app.delete("/delete/:id",(req,res) => {
     seatCollection.deleteOne({_id:ObjectId(req.params.id)}).then(result => {
      res.send(result.deletedCount > 0)
     })
